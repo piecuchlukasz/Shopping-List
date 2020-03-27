@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-left: auto 0;
+  margin: 0;
+  background-color: #FF977E;
+}
+
+h1, div.serchbar {
+  text-align: center;
+  margin: 30px 0;
+}
+
+div.serchbar, .scroll, #print {
+  animation-delay: 2.2s;
+}
+
+.container {
+  height: 95vh;
+  min-height: 500px;
+  width: 90vw;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin: auto auto;
+  margin-top: 15px;
+  background-color: #EC6153;
+}
+
+div.scroll {
+  margin: auto;
+  overflow-y: scroll;
+  max-height: 55vh;
+  min-height: 20vh;
+  width: 70vw;
+  border: 2px solid green;
+  border-radius: 5px;
+  background-color: #FFC255;
+}
+
+.delete, .importancebtn {
+  float: right;
+  margin: 0.9rem 5px 0.3rem 0;
+}
+
+#print {
+  margin-right: 10vw;
+  margin-top: 10px;
+  float: right;
+}
+
+.importance {
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 20px;
+  /*transform: skewY(-10deg);*/
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: red;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.newText {
+  display: inline-block;
+  font-family: 'Gloria Hallelujah';
+  font-size: 20px;
+  margin: 10px 0;
+  animation-delay: -0.5s;
+}
+
+.btnsdiv {
+  display: inline-block;
+  float: right;
+  margin-left: auto; 
+}
+
