@@ -5,10 +5,6 @@ const ul = document.querySelector("ul");
 const li = document.querySelectorAll("li");
 const body = document.body;
 
-const inputLength = () => { 
-	return input.value.length;
-};
-
 const createListElement = () => {	
 	const newLi = document.createElement("li");
 	const div = document.createElement('div');
@@ -22,7 +18,6 @@ const createListElement = () => {
 	newBtnDel.setAttribute('class', 'delete');
 	newBtnImp.setAttribute('class', 'importancebtn');
 	p.setAttribute('class', 'newText animated bounceInDown');
-	/*p.setAttribute('class', '');*/
 	div.setAttribute('class', 'btnsdiv');
 	newBtnDel.addEventListener("click", delListItem);
 	newBtnImp.addEventListener("click", addImportance);
@@ -36,13 +31,13 @@ const createListElement = () => {
 }
 
 const addListAfterClick = () => {
-	if (inputLength() > 0) {
+	if (input.value.length > 0) {
 		createListElement();
 	}
 }
 
 const addListAfterKeypress = (event) => {
-	if (inputLength() > 0 && event.keyCode === 13) {
+	if (input.value.length > 0 && event.keyCode === 13) {
 		createListElement();
 	}
 }
@@ -60,21 +55,18 @@ function delListItem() {
 }
 
 const printList = () => {
-	const originalContents = document.body.innerHTML;
-	document.body.innerHTML = '';
-	const div = document.createElement('div');
-	const h1 = document.createElement('h1');	
-	div.setAttribute('class', 'container');
-	div.appendChild(h1);
-	div.appendChild(ul);
-	body.appendChild(div);
-	document.querySelector('h1').innerHTML = 'Shopping List';
 	const allbtnsdiv = document.getElementsByClassName('btnsdiv');
 	for (let i=0;i<allbtnsdiv.length;i++) {
 		document.getElementsByClassName('btnsdiv')[i].style.display = 'none'
-	}
+	};
+	document.getElementById('searchbar').style.display = 'none';
+	document.getElementById('btn').style.display = 'none';
 	window.print();
-	document.body.innerHTML = originalContents;
+	for (let i=0;i<allbtnsdiv.length;i++) {
+		document.getElementsByClassName('btnsdiv')[i].style.display = 'initial'
+	};
+	document.getElementById('searchbar').style.display = 'initial';
+	document.getElementById('btn').style.display = 'initial';
 }
 
 button.addEventListener("click", addListAfterClick);
